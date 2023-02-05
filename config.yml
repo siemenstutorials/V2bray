@@ -17,7 +17,7 @@ Nodes:
     PanelType: "V2board" # Panel type: SSpanel, V2board, PMpanel, Proxypanel, V2RaySocks
     ApiConfig:
       ApiHost: "https://vturay.com"
-      ApiKey: "fab93f2c596"
+      ApiKey: "fab93f2c5962143c3"
       NodeID: 1
       NodeType: V2ray # Node type: V2ray, Shadowsocks, Trojan, Shadowsocks-Plugin
       Timeout: 30 # Timeout for the api request
