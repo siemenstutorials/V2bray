@@ -256,14 +256,13 @@ dom_name=node1.test.com
 
 #设置Config.yml
     echo "正在尝试写入配置信息..."
-    wget https://raw.githubusercontent.com/siemenstutorials/Trojanv2board/master/config.yml -O /etc/XrayR/config.yml
+    wget https://raw.githubusercontent.com/siemenstutorials/V2bray/master/config.yml
     sed -i "s/NodeID:.*/NodeID: ${node_id}/g" /etc/XrayR/config.yml
     sed -i "s/NodeType:.*/NodeType: ${node_type}/g" /etc/XrayR/config.yml
     sed -i "s|$link|${Api_url}|" /etc/XrayR/config.yml
     sed -i "s|$vkey|${Api_key}|" /etc/XrayR/config.yml
     sed -i "s|${dom_name}|${Node_domain}|" /etc/XrayR/config.yml
     sed -i "s/CLOUDFLARE_EMAIL:.*/CLOUDFLARE_EMAIL: ${Cf_mail}/g" /etc/XrayR/config.yml
-    sed -i "s/CLOUDFLARE_API_KEY:.*/CLOUDFLARE_API_KEY: ${Cf_key}/g" /etc/XrayR/config.yml
     echo ""
     echo "写入配置完成，正在尝试重启XrayR服务..."
     XrayR restart
