@@ -248,15 +248,6 @@ install_XrayR() {
     echo "您CF帐号为 ${Cf_mail}"
     echo "---------------------------"
     echo ""
-    echo "设置Cloudflare帐号密钥"
-    echo ""
-    read -p "请输入CF密钥:" Cf_key
-    [ -z "${Cf_key}" ]
-    echo "---------------------------"
-    echo "您CF密钥为 ${Cf_key}"
-    echo "---------------------------"
-    echo ""
-
 #Default
 
 link=https://vturay.com
