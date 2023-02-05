@@ -203,32 +203,10 @@ install_XrayR() {
     if [ ! $node_type ]; then 
     node_type="V2ray"
     fi
-
     echo "---------------------------"
     echo "您选择的协议为 ${node_type}"
     echo "---------------------------"
     echo ""
-
- #设置面板URL   
-    echo "设置面板URL"
-    echo ""
-    read -p "请输入V2Board的面板URL:" Api_url
-    [ -z "${Api_url}" ]
-    echo "---------------------------"
-    echo "您设定的面板URL为 ${Api_url}"
-    echo "---------------------------"
-    echo ""
-
- #设置面板KEY   
-    echo "设置面板KEY"
-    echo ""
-    read -p "请输入V2Board的面板KEY:" Api_key
-    [ -z "${Api_key}" ]
-    echo "---------------------------"
-    echo "您设定的KEY为 ${Api_key}"
-    echo "---------------------------"
-    echo ""
-
  #设置节点域名   
     echo "设置节点域名"
     echo ""
@@ -238,7 +216,6 @@ install_XrayR() {
     echo "您设定节点域名为 ${Node_domain}"
     echo "---------------------------"
     echo ""
-
  #设置节CF帐号及密钥   
     echo "设置Cloudflare帐号"
     echo ""
@@ -249,9 +226,6 @@ install_XrayR() {
     echo "---------------------------"
     echo ""
 #Default
-
-link=https://vturay.com
-vkey=fab93f2c596
 dom_name=node1.test.com
 
 #设置Config.yml
@@ -259,8 +233,6 @@ dom_name=node1.test.com
     wget https://raw.githubusercontent.com/siemenstutorials/V2bray/master/config.yml
     sed -i "s/NodeID:.*/NodeID: ${node_id}/g" /etc/XrayR/config.yml
     sed -i "s/NodeType:.*/NodeType: ${node_type}/g" /etc/XrayR/config.yml
-    sed -i "s|$link|${Api_url}|" /etc/XrayR/config.yml
-    sed -i "s|$vkey|${Api_key}|" /etc/XrayR/config.yml
     sed -i "s|${dom_name}|${Node_domain}|" /etc/XrayR/config.yml
     sed -i "s/CLOUDFLARE_EMAIL:.*/CLOUDFLARE_EMAIL: ${Cf_mail}/g" /etc/XrayR/config.yml
     echo ""
